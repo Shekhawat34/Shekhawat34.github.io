@@ -1,6 +1,7 @@
 body{
     padding:0;
     margin:0;
+    background-color: #737eb4;
 }
 
 
@@ -135,7 +136,7 @@ header{
     color:#01ca8b;
 }
 .banner{
-    background-position:50% 0;
+    background-position:30% 60%;
     background-size:cover;
     background-repeat:no-repeat;
     padding:16enm 0 14enm 0;
@@ -143,6 +144,7 @@ header{
 }
 .banner-content{
     width:80%;
+
 }
 
 .banner-content h1{
@@ -154,8 +156,8 @@ header{
 }
 .service{
     border-radius:10px;
-    background:#ffffff45;
-    border:1px solid #dfdfdf94;
+    background:#737eb4;
+    border:1px solid #737eb4;
     margin-top:100px;
 }
 .service a{
@@ -192,7 +194,7 @@ header{
     position:absolute;
     left:0;
     bottom: -5px;
-    background: #5f5c5c;
+    background: #737eb4;
     height: 2px;
     width:0;
     transition:0.2s ease-in-out;
@@ -204,7 +206,8 @@ header{
     width:40px;
     display: inline-block;
     height: 40px;
-    background:#ffffff45;
+    background:#737eb4;
+    
     border-radius: 50%;
     position:relative;
     vertical-align: middle;
@@ -250,7 +253,7 @@ header{
 .work{
    position:relative;
    margin-top: -80px;
-   background-color: #8b8b8b;
+   background-color: #737eb4;
 }
 .hours{
   background:#01ca8b;
@@ -346,7 +349,7 @@ header{
     line-height: 36px;
 }
 .response-content p{
-      color: #8b8b8b; 
+      color: #737eb4; 
       font-size: 15px;
       margin: 24px 0 0;
 }
@@ -372,3 +375,213 @@ header{
     color:#01ca8b;
     margin-left: 6px;
 }
+@media only screen and (max-width: 1200px) {
+
+    .logo img{
+       width: 50px;
+       height: 50px;
+    }
+ 
+    .menu ul li{
+       margin:0 10px;
+    }
+    
+    .btn-green{
+       font-size: 14px;
+       padding: 8px 20px;
+    }
+    .banner-content h1{
+        font-size:60px;
+        line-height:60px;
+        margin-top:5px;
+    }
+
+    .service a{
+        width:50%;
+        font-size:16px;
+        padding:24px 10px;
+        height:120px;
+    }
+
+    .service a:last-child{
+        width:50%;
+    }
+    .hours h2{
+        font-size: 24px;
+        margin-bottom: 20px;
+     }
+  
+     .time h4, .time p{
+        font-size: 14px;
+     }
+  
+     .booking{
+        width: 100%;
+        margin-left: 0;
+        text-align: center;
+        margin-top: 20px;
+     }
+     
+     .response-content{
+        padding: 70px 20px 20px;
+     }
+  
+     .response-icon{
+        width: 50px;
+        height: 50px;
+     }
+  
+     .response-content h2{
+        font-size: 24px;
+        line-height: 30px;
+     }
+  
+     .response-content p{
+        font-size: 13px;
+        margin: 20px 0 0;
+     }
+  }
+  
+
+
+   
+ 
+ 
+ /* Responsive styles for mobile devices */
+ @media only screen and (max-width: 1768px) {
+ 
+    .logo img{
+       width: 40px;
+       height: 40px;
+    }
+ 
+    .menu ul li{
+       margin:0 5px;
+    }
+    
+    .btn-green{
+       font-size: 12px;
+       padding: 6px 16px;
+    }
+    .banner-content h1{
+        font-size:40px;
+        line-height:40px;
+        margin-top:2px;
+    }
+
+    .service{
+        margin-top:60px;
+    }
+
+    .service a{
+        width:100%;
+        font-size:14px;
+        padding:20px 10px;
+        height:auto;
+        border-right:none;
+        border-bottom:1px solid #fff;
+        text-align:center;
+    }
+
+    .service a:last-child{
+        width:100%;
+        border-top-right-radius:0;
+        border-bottom-right-radius:0;
+    }
+
+    .call-number p{
+        font-size:12px;
+    }
+ }
+ @media only screen and (max-width:100px ) 
+ {
+ 
+    .logo img{
+       width: 40px;
+       height: 40px;
+    }
+ 
+    .menu ul li{
+       margin:0 5px;
+    }
+    
+    .btn-green{
+       font-size: 12px;
+       padding: 6px 16px;
+    }
+    .banner-content h1{
+        font-size:40px;
+        line-height:40px;
+        margin-top:2px;
+    }
+
+    .service{
+        margin-top:60px;
+    }
+
+    .service a{
+        width:100%;
+        font-size:14px;
+        padding:20px 10px;
+        height:auto;
+        border-right:none;
+        border-bottom:1px solid #fff;
+        text-align:center;
+    }
+
+    .service a:last-child{
+        width:100%;
+        border-top-right-radius:0;
+        border-bottom-right-radius:0;
+    }
+
+    .call-number p{
+        font-size:12px;
+    }
+ }
+ @media only screen and (max-width:4000px ) 
+ {
+ 
+    .logo img{
+       width: 40px;
+       height: 40px;
+    }
+ 
+    .menu ul li{
+       margin:0 5px;
+    }
+    
+    .btn-green{
+       font-size: 12px;
+       padding: 6px 16px;
+    }
+    .banner-content h1{
+        font-size:40px;
+        line-height:40px;
+        margin-top:2px;
+    }
+
+    .service{
+        margin-top:60px;
+    }
+
+    .service a{
+        width:100%;
+        font-size:14px;
+        padding:20px 10px;
+        height:auto;
+        border-right:none;
+        border-bottom:1px solid #fff;
+        text-align:center;
+    }
+
+    .service a:last-child{
+        width:100%;
+        border-top-right-radius:0;
+        border-bottom-right-radius:0;
+    }
+
+    .call-number p{
+        font-size:12px;
+    }
+ }
