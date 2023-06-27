@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="viewport"content="width-device-width,initial-scale=0.1">
+    <head>
+        <title>Cardiology Department</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css" integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Slab&display=swap" rel="stylesheet">
+        <link rel="stylesheet"type="text/css"href="Read_more.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: 'Poppins', sans-serif;
+                transition: all 0.4s ease;;
+            }
+            
+            
+            /* ===== Colours ===== */
+            :root{
+                --body-color: #E4E9F7;
+                --nav-color: #7f64d6;
+                --side-nav: #010718;
+                --text-color: #FFF;
+                --search-bar: #F2F2F2;
+                --search-text: #010718;
+            }
+            
+            body{
+                height: 100vh;
+                background-color: var(--body-color);
+            }
+            
+            body.dark{
+                --body-color: #18191A;
+                --nav-color: #242526;
+                --side-nav: #242526;
+                --text-color: #CCC;
+                --search-bar: #242526;
+            }
+            
+            nav{
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 70px;
+                width: 100%;
+                background-color: var(--nav-color);
+                z-index: 100;
+            }
+            
+            body.dark nav{
+                border: 1px solid #393838;
+            
+            }
+            
+            nav .nav-bar{
+                position: relative;
+                height: 100%;
+                max-width: 1000px;
+                width: 100%;
+                background-color: var(--nav-color);
+                margin: 0 auto;
+                padding: 0 30px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            
+            nav .nav-bar .sidebarOpen{
+                color: var(--text-color);
+                font-size: 25px;
+                padding: 5px;
+                cursor: pointer;
+                display: none;
+            }
+            
+            nav .nav-bar .logo a{
+                font-size: 25px;
+                font-weight: 500;
+                color: var(--text-color);
+                text-decoration: none;
+            }
+            
+            .menu .logo-toggle{
+                display: none;
+            }
+            
+            .nav-bar .nav-links{
+                display: flex;
+                align-items: center;
+            }
+            
+            .nav-bar .nav-links li{
+                margin: 0 5px;
+                list-style: none;
+            }
+            
+            .nav-links li a{
+                position: relative;
+                font-size: 17px;
+                font-weight: 400;
+                color: var(--text-color);
+                text-decoration: none;
+                padding: 10px;
+            }
+            
+            .nav-links li a::before{
+                content: '';
+                position: absolute;
+                left: 50%;
+                bottom: 0;
+                transform: translateX(-50%);
+                height: 6px;
+                width: 6px;
+                border-radius: 50%;
+                background-color: var(--text-color);
+                opacity: 0;
+                transition: all 0.3s ease;
+            }
+            
+            .nav-links li:hover a::before{
+                opacity: 1;
+            }
+            
+            .nav-bar .darkLight-searchBox{
+                display: flex;
+                align-items: center;
+            }
+            
+            .darkLight-searchBox .dark-light,
+            .darkLight-searchBox .searchToggle{
+                height: 40px;
+                width: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 5px;
+            }
+            
+            .dark-light i,
+            .searchToggle i{
+                position: absolute;
+                color: var(--text-color);
+                font-size: 22px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+            
+            .dark-light i.sun{
+                opacity: 0;
+                pointer-events: none;
+            }
+            
+            .dark-light.active i.sun{
+                opacity: 1;
+                pointer-events: auto;
+            }
+            
+            .dark-light.active i.moon{
+                opacity: 0;
+                pointer-events: none;
+            }
+            
+            
+            @media (max-width: 790px) {
+                nav .nav-bar .sidebarOpen{
+                    display: block;
+                }
+            
+                .menu{
+                    position: fixed;
+                    height: 100%;
+                    width: 320px;
+                    left: -100%;
+                    top: 0;
+                    padding: 20px;
+                    background-color: var(--side-nav);
+                    z-index: 100;
+                    transition: all 0.4s ease;
+                }
+            
+                nav.active .menu{
+                    left: -0%;
+                }
+            
+                nav.active .nav-bar .navLogo a{
+                    opacity: 0;
+                    transition: all 0.3s ease;
+                }
+            
+                .menu .logo-toggle{
+                    display: block;
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                }
+            
+                .logo-toggle .siderbarClose{
+                    color: var(--text-color);
+                    font-size: 24px;
+                    cursor: pointer;
+                }
+            
+                .nav-bar .nav-links{
+                    flex-direction: column;
+                    padding-top: 30px;
+                }
+            
+                .nav-links li a{
+                    display: block;
+                    margin-top: 20px;
+                }
+            }
+        </style>
+    </head>
+    <body style="background-image: url(https://wallpaperaccess.com/full/4112909.jpg);background-repeat:no-repeat;background-size:cover;background-position:center center;transition:all 0.3s ease-in-out;transform:scale(1);transform:scale(0.98);"></body>
+        <nav>
+            <div class="nav-bar">
+                <i class='bx bx-menu sidebarOpen' ></i>
+                <span class="logo navLogo"><a href="Hospital_management.html">SL Hospitals</a></span>
+    
+                <div class="menu">
+                    <div class="logo-toggle">
+                        <span class="logo"><a href="Hospital_management.html">SL Hospitals</a></span>
+                        <i class='bx bx-x siderbarClose'></i>
+                    </div>
+    
+                    <ul class="nav-links">
+                        <li><a href="Hospital_management.html">Home</a></li>
+                        <li><a href="About_Us.html">About</a></li>
+                        <li><a href="Patient_record.html">Patient_record</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="Contact_Us.html">Contact</a></li>
+                    </ul>
+                </div>
+    
+                <div class="darkLight-searchBox">
+                    <div class="dark-light">
+                        <i class='bx bx-moon moon'></i>
+                        <i class='bx bx-sun sun'></i>
+                    </div>
+    
+                   
+                </div>
+            </div>
+        </nav>
+        <br>
+        <br>
+        <br>    
+       
+        <div class="section">
+            <div class="container">
+                <div class="content-section">
+                    <div class="title"><br><br>
+                        <h1 style="color:#9400D3">Cancer TreatmentS</h1>
+                        
+                    </div>
+                    <div class="content">
+                        <h3>Wel-come to our Cancer treatment zone</h3><p>Here our top medicals staffs like <b>Dr.Krishna Runthala</b>,<b>Dr.Ravi Jangir</b>,<b>Dr.Gagan Saini</b>, handles evergy situations .we are among the best hospitals in the country provided with all the facilities.we have good machineries and wel-facilited scanners whose check-up rates are even so good.we organize free check-up camps also to help those who due to lack of facilities or money avoid their check-ups.
+                            We are pleased to announce that we are going to start our new medical-hospital in the delhi-ncr and it is going to be in the list of our best hospitals we assure that we will provide good facilities to our cancer patients.There are many types of cancer treatment. The types of treatment that you receive will depend on the type of cancer you have and how advanced it is.
+                            Some people with cancer will have only one treatment. But most people have a combination of treatments, such as surgery with chemotherapy and radiation therapy. When you need treatment for cancer, you have a lot to learn and think about. It is normal to feel overwhelmed and confused. But, talking with your doctor and learning about the types of treatment you may have can help you feel more in control. our list consistis of following treatments:-<br>
+                            <ol>
+                                <li>Chemotherapy</li>
+                                <li>Radiation Therapy</li>
+                                <li>Hormone therapy</li>
+                                <li>Immunotherapy</li>
+                                <li>Biomarker Testing for Cancer Treatment</li>
+                                <li>Photodynamic Therapy</li>
+                                
+
+                            </ol>
+                         
+                         </p>
+                         <h2 align="center"style="color:#9400D3;">Thank-you</h2>
+                        <div class="button"><a href="">Read More</a>
+                        </div>
+                    </div>
+                    <div class="social">
+                        <a href=""><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a>
+                        <a href=""><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
+                        <a href=""><i class="fa fa-whatsapp fa-2x" aria-hidden="true"></i></a>
+                        <a href=""><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i></a>
+                       
+                    </div>
+                </div>
+                <div class="image-section">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpC1iSNgg2bsDyuCqa5IX1vfGvApOFd2ZkVQ&usqp=CAU">
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

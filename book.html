@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta name="viewport" content="width=device-width, initial-scale=0.1">
+        <title>book your details</title>
+    <style>
+        .container {
+            background-image: url("https://i.pinimg.com/564x/06/b5/c1/06b5c1282a2aa4f74990ca3c748a2f1f.jpg");
+            background-size: cover;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+          
+          .form-container {
+            background-color: rgba(242, 234, 234, 0.8);
+            border: 2px solid rgb(7, 226, 223);
+            padding: 20px;
+          }
+          
+          h2 {
+            color: rgb(9, 155, 233);
+            margin-bottom: 20px;
+          }
+          
+          label {
+            display: block;
+            font-weight: bold;
+            margin-top: 10px;
+          }
+          
+          input[type="text"], input[type="email"], select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 5px;
+            margin-bottom: 10px;
+          }
+          
+          input[type="date"], input[type="time"] {
+            width: 50%;
+          }
+          
+          button[type="submit"] {
+            background-color: rgb(9, 155, 233);
+            color: rgb(119, 36, 36);
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+          }
+          
+    </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="form-container">
+              <form id="myForm">
+                <h2>Book Hospital Checkup Time</h2>
+          
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+          
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+          
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+          
+                <label for="time">Time:</label>
+                <input type="time" id="time" name="time" required>
+          
+                <label for="doctor">Doctor:</label>
+                <select id="doctor" name="doctor" required>
+                  <option value="">Choose a doctor</option>
+                  <option value="Dr.Saroj Shekhawat">Dr.Saroj Shekhawat</option>
+                  <option value="Dr.Upender Singh">Dr.Upender Singh</option>
+                  <option value="Dr.Gagan Saini">Dr.Gagan Saini</option>
+                  <option value="Dr.Ravi Sharma">Dr.Ravi Sharma</option>
+                </select>
+          
+                <button type="submit">Book Now</button>
+              </form>
+            </div>
+          </div>
+          <script>
+          const myForm = document.getElementById("myForm");
+          myForm.addEventListener("submit", function(e) {
+            e.preventDefault(); // prevent form submission
+          
+            // logic to book checkup time
+          
+            alert("Your checkup time has been successfully booked. Hope we will provide you with the best of our facilities!");
+          }); 
+        </script>   
+    </body>
+</html>

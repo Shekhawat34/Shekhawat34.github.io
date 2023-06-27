@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.1">
+    <title>Hospital Frame</title>
+   <style>
+    
+      
+      .form-container {
+        width:100%;
+    display:block;
+    margin:auto;
+    padding-top:100px;
+      }
+      .form-container::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: -1;
+      }
+      @media screen and(max-width:768px){
+        .form-container{
+            width:100%;
+            display:block;
+            margin:auto;
+            padding-top:50px;
+        }
+        .form-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+          }
+        }
+   </style>
+    
+</head>
+<body >
+    <div class="background-image">
+    <div class="form-container">
+    <h1>Patient Registration Form</h1>
+
+    <form id="patient-registration-form" onsubmit="saveFormData(event)">
+        <p>Please complete all fields in print.</p>
+        <table border="1" >
+            <tr>
+               
+                <td  colspan="6" bgcolor="Grey">PATIENT INFORMATION</td>
+            </tr>
+            <tr>
+                <th colspan="5" align="left"><label for ="patient name">Patient Name:-</label>
+                <input type="text" id="patient name"name="patient name" required></th>
+                <th> <label for="gender">Gender:</label>
+                    <label>
+                    <input type="radio">Male</label>
+                    <label>
+                    <input type="radio">Female</label><br></th>
+            </tr>
+            <tr>
+                <th colspan="2"align="left"><label for="dob">Date of Birth</label>
+                    <input type="text" id="dob" name="dob" pattern="\d{2}/\d{2}/\d{4}" required></th>
+                <th colspan="4"align="left"><label for="primary care physician">Primary care physician(PCP):-</label>
+                <input type="text" id="primary care physician"name="primary care physician"required></th>
+            </tr>
+            <tr>
+
+                <th colspan="3"align="left"><label for="Address">Address:</label>
+                <input type="statement" id="Address"name="Address"required></th>
+                <th><label for="City"align="left">City:</label>
+                    <input type="text" id="City"name="City"required></th>
+                <th><label for="State"align="left">State:</label>
+                    <input type="text" id="State"name="State"required></th>
+                <th><label for="Zip Code"align="left">Zip Code:</label>
+                    <input type="Zip Code" id="Zip Code"name="Zip Code"required></th>
+
+            </tr>
+            <tr>
+                <tr colspan="3"align="left"><label for="Home Phone No.">Home Phone(Ph):</label>
+                    <input type="number" id="Home Phone No.(ph)"name="Home Phone No.(ph)"required></tr>
+                <tr colspan="3"align="left"><label for="Work Phone(Ph):">Work Phone(Ph):</label>
+                    <input type="number" id="Work Phone(ph):"name="Work Phone(Ph)"required></tr>
+
+            </tr>
+            <tr>
+                <td colspan="6" bgcolor="Grey">PRIMARY INSURANCE AND SUBSCRIBER INFORMATION</td>
+            </tr>
+            <tr>
+                <th colspan="3"align="left"><label for="Primary Insurance Name">Primary Insurance Name:</label>
+                    <input type="text" id="Primary Insurance Name"name="Primary Insurance Name"required></th>
+                <th colspan="3"align="left"><label for="Relationship to Subscriberr">Relationship to Subscriber:</label>
+                    <input type="text" id="Relationship to Subscriber"name="Relationship to Subscriber"required></th>
+
+            </tr>
+            <tr>
+                <th colspan="3"align="left"><label for="Subscriber Name">Subscriber Name:</label>
+                    <input type="text" id="Subscriber Name"name="Subscriber Name"required></th>
+                <th colspan="3.5"align="left"><label for="dob">Subscriber'sDate of Birth</label>
+                    <input type="number" id="dob" name="dob" pattern="\d{2}/\d{2}/\d{4}" required></th>
+            </tr>
+            <tr>
+                <th colspan="3"align="left"><label for="Subscriber ID">Subscriber ID:</label>
+                    <input type="number" id="Subscriber ID"name="Subsrciber ID"required></th>
+                <th align="left"><label for="Group">Group#:</label>
+                    <input type="text" id="Group"name="Group"required></th>
+                <th align="left"><label for="Plan">Plan#:</label>
+                    <input type="text" id="Group"name="Group"required></th>
+                <th align="left"><label for="Pharmacy">Pharmacy#:</label>
+                    <input type="text" id="Pharmacy"name="Pharmacy"required></th>
+            </tr>
+            <tr>
+                <td colspan="6" bgcolor="Grey">SECONDARY INSURANCE</td>
+            </tr>
+            <tr>
+                <th colspan="3" align="left"><label for="Secondary Insurance Name">Secondary Insurance Name:</label>
+                    <input type="text" id="Secondary Insurance Name"name="Secondary Insurance Name"required></th>
+                <th colspan="3" align="left"><label for="Relationship to Subscriberr">Relationship to Subscriber:</label>
+                    <input type="text" id="Relationship to Subscriber"name="Relationship to Subscriber"required></th>
+
+            </tr>
+            <tr>
+                <th colspan="3" align="left"><label for="Subscriber Name">Subscriber Name:</label>
+                    <input type="text" id="Subscriber Name"name="Subscriber Name"required></th>
+                <th colspan="3.5" align="left"><label for="dob">Subscriber'sDate of Birth</label>
+                    <input type="number" id="dob" name="dob" pattern="\d{2}/\d{2}/\d{4}" required></th>
+            </tr>
+            <tr>
+                <th colspan="3"align="left"><label for="Subscriber ID">Subscriber ID:</label>
+                    <input type="number" id="Subscriber ID"name="Subsrciber ID"required></th>
+                <th align="left"><label for="Group">Group#:</label>
+                    <input type="text" id="Group"name="Group"required></th>
+                <th align="left"><label for="Plan">Plan#:</label>
+                    <input type="text" id="Group"name="Group"required></th>
+                <th align="left"><label for="Pharmacy">Pharmacy#:</label>
+                    <input type="text" id="Pharmacy"name="Pharmacy"required></th>
+            </tr>
+            <tr>
+                <th colspan="3" rowspan="2"align="left"><label for="child">if patient is a child, who may authorize treatment for this child?</label>
+                <input type="text"id="child"name="child"required></th>
+
+                
+
+                <th colspan="1.5"align="left"><label for="relationship to patient">Relationship to Patient:</label>
+                <input type="text" id="relationship to patient"name="relationship to patient"required></th>
+                <th colspan="1.5"align="left"><label for="Phone no(Ph)">Phone no(Ph):</label>
+                <input type="number" id="Phone no(Ph)"name="Phone no(Ph)"required></th>
+            </tr>
+
+        </table>
+        <label for="signature">Signature of guardian's or parent's,patient</label>
+        <input type="text" id="signature"name="signature"required>
+<canvas id="signature" name="signature"></canvas>
+<button onclick="clearCanvas()">Clear Signature</button>
+
+
+        <input type="submit" value="Submit">
+    </form>
+    </div>
+    </div>
+    
+</body>
+</html>

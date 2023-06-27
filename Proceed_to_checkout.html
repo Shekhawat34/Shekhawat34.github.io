@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta name="viewport" content="width=device-width, initial-scale=0.1">
+        <title>Payment</title>
+    </head>
+    <body>
+        <button onclick="closePaymentWindow()">Close</button>
+        <div id="paymentWindow" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); background-color:#F1C40F; padding:20px;">
+          <h3>Enter Payment Information</h3>
+          <form>
+            Amount: <input type="number" name="amount"><br><br>
+            <input type="submit" value="Proceed" onclick="showSuccessMessage()">
+          </form>
+        </div>
+        <div id="successMessage" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%);">
+          <h3>Amount Successfully Deposited!</h3>
+        </div>
+        <button onclick="openPaymentWindow()">Make a Payment</button>
+        
+        <script>
+            function openPaymentWindow() {
+                var paymentWindow = document.getElementById("paymentWindow");
+                paymentWindow.style.display = "block";
+              }
+              
+              function closePaymentWindow() {
+                var paymentWindow = document.getElementById("paymentWindow");
+                paymentWindow.style.display = "none";
+              }
+              
+              function showSuccessMessage() {
+                var successMessage = document.getElementById("successMessage");
+                var paymentWindow = document.getElementById("paymentWindow");
+                var amount = document.getElementsByName("amount")[0].value;
+                successMessage.style.display = "block";
+                paymentWindow.style.display = "none";
+                alert(amount + " has been successfully deposited!");
+              }   
+        </script>
+    </body>
+</html>

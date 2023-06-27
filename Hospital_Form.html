@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Registration Form</title>
+    <link rel="stylesheet" href="Patient_Form.css">
+</head>
+<body>
+     <header>
+        <h2 class="logo">SL Hospitals</h2>
+        <nav class="navigation">
+            <a href="Hospital_management.html">Home</a>
+            <a href="About_Us.html">About</a>
+            <a href="Contact_Us.html">Contact</a>
+            <button class="btnLogin-popup">Form</button>
+        </nav>
+     </header>
+     <div class="wrapper">
+        <span class="icon-close"><ion-icon name="close"></ion-icon></span>
+        <div class="form-box register">
+            <h2>Patient Registration</h2>
+            <form action="#">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person-circle-outline"></ion-icon></span>
+                    <input type="text" required>
+                    <label>Full Name</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="calendar"></ion-icon></span>
+                    <input type="date" required>
+                    <label>Date of Birth</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                    <input type="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="call"></ion-icon></span>
+                    <input type="tel" required>
+                    <label>Phone Number</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="location-outline"></ion-icon></span>
+                    <input type="text" required>
+                    <label>Address</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="medkit-outline"></ion-icon></span>
+                    <input type="text" required>
+                    <label>Insurance Provider</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox">I agree to the terms and conditions</label>
+                </div>
+                <button type="submit"class="btn">Register</button>
+            </form>
+        </div>
+      
+     </div>
+     <script>
+      const wrapper=document.querySelector('.wrapper');
+      const loginLink=document.querySelector('.login-link');
+      const btnPopup=document.querySelector('.btnLogin-popup');
+      const iconClose = document.querySelector('.btn');
+
+      btnPopup.addEventListener('click',()=>{
+        wrapper.classList.add('active-popup');
+      });
+      iconClose.addEventListener('click', () => {
+        wrapper.iconClose.classList.remove('active-popup');
+      });
+
+       
+      
+
+         
+     </script>
+     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

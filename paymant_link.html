@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=0.1">
+    <title>Payment Window</title>
+    <style>
+      /* Styling for payment window */
+      body {
+        background-color: cyan;
+      }
+      .payment-container {
+        height: 200px;
+        width: 300px;
+        margin: auto;
+        margin-top: 100px;
+        background-color: white;
+        border-radius: 10px;
+        text-align: center;
+        padding: 20px;
+      }
+      input[type="text"] {
+        width: 80%;
+        height: 30px;
+        margin-bottom: 20px;
+        font-size: 18px;
+        padding-left: 10px;
+      }
+      input[type="submit"] {
+        background-color: cyan;
+        border: none;
+        color: white;
+        font-size: 18px;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    
+    <div class="payment-container">
+      <h2>Payment Window</h2>
+      <form>
+        <label for="amount">Enter amount:</label><br>
+        <input type="text" id="amount" name="amount"><br>
+        <input type="submit" value="Proceed" onclick="alert('Payment has been successfully deposited')">
+      </form>
+    </div>
+  </body>
+</html>
